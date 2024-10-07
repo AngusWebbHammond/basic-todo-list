@@ -4,12 +4,14 @@ import './todo-list-container.css'
 import data from '../../assets/test-data.json';
 
 const TodoListContainer = () => {
-  return (
-    <div className='todo-main-container'>
-        <Todos title='Urgent' data={data}/>
-        <Todos title='Important' data={data}/>
-        <Todos title='Upcoming' data={data}/>
-    </div>
+    const keys = Object.keys(data);
+
+    return (
+        <div className='todo-main-container'>
+            {keys.map((key) =>
+                <Todos title={key} data={data}/>
+            )}
+        </div>
   )
 }
 
