@@ -1,5 +1,20 @@
+.todo-container {
+    width: 400px;
+}
+
 .title {
+    display: flex;
+    justify-content: space-between;
     border-bottom: solid 1px black;
+    align-items: center;
+}
+
+.remove {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 .description {

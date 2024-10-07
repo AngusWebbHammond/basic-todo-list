@@ -1,14 +1,10 @@
-import Todos from "./components/Todos"
 import './app.css'
+import TodoListContainer from "./components/Todo-List-Container"
 
 function App() {
 
   return (
-    <div className="todo-main-container">
-      <Todos title='Urgent'/>
-      <Todos title='Important'/>
-      <Todos title='Upcoming'/>
-    </div>
+      <TodoListContainer/>
   )
 }
 
