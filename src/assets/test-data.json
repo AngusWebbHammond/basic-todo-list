@@ -1,0 +1,33 @@
+{
+    "Urgent": [
+        {
+            "title": "Clean Room",
+            "description": "",
+            "deadline": "01/11/24"
+        },
+        {
+            "title": "Do Washing Up",
+            "description": "",
+            "deadline": "10/10/24"
+        },
+        {
+            "title": "Learn CS50",
+            "description": "To be done on edx.org",
+            "deadline": "23/11/24"
+        }
+    ],
+    "Important": [
+        {
+            "title": "Do Homework",
+            "description": "",
+            "deadline": "11/10/24"
+        }
+    ],
+    "Upcoming": [
+        {
+            "title": "Learn React Node",
+            "description": "To be done as a learning task for future development",
+            "deadline": "01/12/24"
+        }
+    ]
+}

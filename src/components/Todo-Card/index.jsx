@@ -1,13 +1,16 @@
 import React from 'react'
 import './todo-card.css'
-import { X } from 'lucide-react'
+import { Check, X } from 'lucide-react'
 
 const TodoCard = (props) => {
   return (
     <div className='todo-container'>
         <div className='title'>
             <h3>{props.cardTitle}</h3>
-            <button className='remove'><X/></button>
+            <div>
+                <button className='remove'><Check/></button>
+                <button className='remove'><X/></button>
+            </div>
         </div>
         <div className='description'>
             <h4>{props.description}</h4>
