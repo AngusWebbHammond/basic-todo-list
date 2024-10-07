@@ -9,7 +9,7 @@ const Todos = (props) => {
     
 
     return (
-        <div className='todo-container'>
+        <div className='todo-list-container'>
             <div className='title'>
                 <h1>{props.title}</h1>
                 <button className='add-todo'><Plus/></button>

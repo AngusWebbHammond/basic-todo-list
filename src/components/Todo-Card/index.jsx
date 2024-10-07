@@ -7,7 +7,7 @@ const TodoCard = (props) => {
     <div className='todo-container'>
         <div className='title'>
             <h3>{props.cardTitle}</h3>
-            <div>
+            <div className='title-buttons'>
                 <button className='remove'><Check/></button>
                 <button className='remove'><X/></button>
             </div>
