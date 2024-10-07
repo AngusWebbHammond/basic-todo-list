@@ -1,4 +1,3 @@
-import { X } from 'lucide-react'
 import React, { useRef } from 'react'
 import { useDispatch } from 'react-redux';
 import { addToData } from '../../features/todos/todosSlice';
