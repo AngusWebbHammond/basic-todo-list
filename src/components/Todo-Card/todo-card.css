@@ -1,0 +1,8 @@
+.title {
+    border-bottom: solid 1px black;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+}
