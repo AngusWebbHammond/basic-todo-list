@@ -14,7 +14,7 @@ const Todos = (props) => {
             </div>
 
             {data.map((item, index) => 
-                <TodoCard key={index} cardTitle={item["title"]} description={item["description"]} deadline={item["deadline"]}/>
+                <TodoCard key={index} cardTitle={item["title"]} description={item["description"]} deadline={item["deadline"]} type={props.title} index={index}/>
             )}
         </div>
     )

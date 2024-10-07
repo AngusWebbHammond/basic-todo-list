@@ -14,7 +14,7 @@ const AddTodoForm = (props) => {
     const dispatch = useDispatch();
 
     const updateTodoList = () => {
-        if (inputTitleRef == "") {
+        if (inputTitleRef.current.value == "") {
             return;
         }
         dispatch(addToData({
