@@ -1,0 +1,5 @@
+.add-todo-title-container {
+    display: inline-flex;
+    justify-content: space-between;
+    border-bottom: black 1px solid;
+}
