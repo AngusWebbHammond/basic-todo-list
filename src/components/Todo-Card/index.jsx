@@ -8,9 +8,11 @@ const TodoCard = (props) => {
     const dispatch = useDispatch();
 
     const todoItemData = {
+        index: props.index,
         type: props.type,
         title: props.cardTitle,
-        index: props.index,
+        description: props.description,
+        deadline: props.deadline,
     }
 
     const completedData = [
@@ -24,7 +26,16 @@ const TodoCard = (props) => {
     ]
 
     return (
-        <div className='todo-container'>
+        <div className='todo-container' 
+        draggable 
+        onDragStart={(e) => props.onDragStart(e, {
+            type: props.type,
+            title: props.cardTitle,
+            index: props.index,
+            description: props.description,
+            deadline: props.deadline,
+        })}
+        >
             <div className='title'>
                 <h3>{props.cardTitle}</h3>
                 {props.type === "Completed" ? <></>:
