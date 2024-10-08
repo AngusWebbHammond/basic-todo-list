@@ -19,7 +19,7 @@ const TodoCard = (props) => {
             type: "Completed",
             title: props.cardTitle,
             description: props.description,
-            deadline: props.deadline,
+            deadline: new Date().toDateString(),
         }
     ]
 
@@ -27,10 +27,12 @@ const TodoCard = (props) => {
         <div className='todo-container'>
             <div className='title'>
                 <h3>{props.cardTitle}</h3>
-                <div className='title-buttons'>
-                    <button className='remove' type='button' onClick={() => dispatch(moveData(completedData))}><Check/></button>
-                    <button className='remove' type='button' onClick={() => dispatch(removeData(todoItemData))}><X/></button>
-                </div>
+                {props.type === "Completed" ? <></>:
+                    <div className='title-buttons'>
+                        <button className='remove' type='button' onClick={() => dispatch(moveData(completedData))}><Check/></button>
+                        <button className='remove' type='button' onClick={() => dispatch(removeData(todoItemData))}><X/></button>
+                    </div>
+                }
             </div>
             <div className='description'>
                 <h4>{props.description}</h4>

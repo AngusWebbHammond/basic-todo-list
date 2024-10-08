@@ -10,7 +10,7 @@ const Todos = (props) => {
         <div className='todo-list-container'>
             <div className='title'>
                 <h1>{props.title}</h1>
-                <AddTodoForm title={props.title}/>
+                {props.title === "Completed" ? <></>:<AddTodoForm title={props.title}/>}
             </div>
 
             {data.map((item, index) => 
