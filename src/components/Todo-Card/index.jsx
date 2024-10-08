@@ -2,7 +2,7 @@ import React from 'react'
 import './todo-card.css'
 import { Check, X } from 'lucide-react'
 import { useDispatch } from 'react-redux';
-import { removeData } from '../../features/todos/todosSlice';
+import { moveData, removeData } from '../../features/todos/todosSlice';
 
 const TodoCard = (props) => {
     const dispatch = useDispatch();
@@ -13,12 +13,22 @@ const TodoCard = (props) => {
         index: props.index,
     }
 
+    const completedData = [
+        todoItemData,
+        {
+            type: "Completed",
+            title: props.cardTitle,
+            description: props.description,
+            deadline: props.deadline,
+        }
+    ]
+
     return (
         <div className='todo-container'>
             <div className='title'>
                 <h3>{props.cardTitle}</h3>
                 <div className='title-buttons'>
-                    <button className='remove'><Check/></button>
+                    <button className='remove' type='button' onClick={() => dispatch(moveData(completedData))}><Check/></button>
                     <button className='remove' type='button' onClick={() => dispatch(removeData(todoItemData))}><X/></button>
                 </div>
             </div>
