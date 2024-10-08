@@ -2,6 +2,7 @@ import React from 'react'
 import TodoCard from '../Todo-Card'
 import './todos.css'
 import AddTodoForm from '../Add-Todo-Form'
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 
 const Todos = (props) => {
     const data = props.data[props.title]
@@ -13,9 +14,28 @@ const Todos = (props) => {
                 {props.title === "Completed" ? <></>:<AddTodoForm title={props.title}/>}
             </div>
 
-            {data.map((item, index) => 
-                <TodoCard key={index} cardTitle={item["title"]} description={item["description"]} deadline={item["deadline"]} type={props.title} index={index}/>
-            )}
+            <DragDropContext>
+                <Droppable droppableId="todos">
+                    {(provided) => 
+                        <div className='todos' {...provided.droppableProps} ref={provided.innerRef}>
+                            {data.map((item, index) => {
+                                return (
+                                    <Draggable key={index} draggableId={index.toString()} index={index}>
+                                        {(provided) => 
+                                            <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                                                <TodoCard cardTitle={item["title"]} description={item["description"]} deadline={item["deadline"]} type={props.title} index={index}/>
+                                            </div>
+                                        }
+                                        
+                                    </Draggable>
+                                )}
+                            )}
+                            {provided.placeholder}
+                        </div>
+                    }
+                </Droppable>
+            </DragDropContext>
+            
         </div>
     )
 }
